@@ -1,0 +1,30 @@
+
+/* 
+    Created on : Jul 18, 2016, 11:02:09 AM
+    Author     : Street
+*/
+
+#attractions {
+    @include clearfix;
+    @include container(100%);
+    padding: 0; //remove default paddings
+    @include backImage('../images/hotel/attractions.jpg');
+    
+    //flex-box: compass 1.0.* mixins to align vertical centered
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    
+    article {
+        @include container(80%);
+        @include breakpoint($medium) {
+            @include container(50%);
+        }//breakpoint
+        
+        padding: 20px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        background: rgba($light, .8);
+        @include border-radius(10px);
+    }
+}

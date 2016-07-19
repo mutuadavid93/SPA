@@ -1,0 +1,49 @@
+/* 
+    Created on : Jul 18, 2016, 12:49:59 PM
+    Author     : Street
+*/
+
+#welcome {
+    @include background-image(linear-gradient(top, $yellow, $orange ));
+    
+    article{
+        text-align: center;
+        @include container(90%); //sussy
+        
+        /*@include breakpoint($small){
+            @include container(33em);
+            padding: 60px 0;
+        }*///breakpoint
+    }//h1
+    
+    h1 {
+        font-weight: normal;
+        line-height: 100%;
+        color: darken($orange, 20);
+        padding: 10px 0;
+    }//h1
+    
+    .gallery {
+        @include clearfix; //pushes next section down to position!!
+        img {
+            @include border-radius(20%); //compass mixin
+            display: none; //by default hide all the images
+            
+            /* Always follow this order small - medium not opposite */
+            
+            @include breakpoint($small) {
+                @include gallery(1 of 4); //(gallery: susy mixin) each image inside a column
+                display: inline;
+                &.hidesm {display: none;}
+            }//breakpoint show 5 images
+            
+            @include breakpoint($medium) {
+                @include gallery(1 of 5); //each image inside a column
+                display: inline;
+                &.hidesm {display: inline;}
+            }//breakpoint show 4 images
+            
+        }
+    }//.gallery
+    
+}//welcome

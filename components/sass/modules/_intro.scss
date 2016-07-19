@@ -1,0 +1,52 @@
+
+/* 
+    Created on : Jul 18, 2016, 12:49:35 PM
+    Author     : Street
+*/
+
+header {
+    .fullheight{
+        @include backImage('../images/London_Hotel_sign.jpg');
+        
+        //take care of vertical alignment center (flex-box)
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(center);
+        
+        .hgroup {
+            padding: 100px 0;
+            
+            h1 {
+                color: $light;
+                font-size: 5em;
+                font-weight: $heavy;
+                line-height: .8em;
+                @include text-shadow($dark 0 0 20px); //compass mixin
+                text-align: center;
+            }//h1
+            
+            h2 {
+                display: block;
+                color: $light;
+                width: 60%;
+                max-width: 200px;
+                margin: 0 auto;
+                text-align: center;
+                border: 1px solid $light;
+                background: rgba($headersubbg, .5);
+                margin-top: 15px;
+                padding: 10px;
+                font-size: 1.3em;
+            }//h2
+            
+            p {
+                text-align: center;
+                img {
+                    padding-top: 50px;
+                    max-width: 50px;
+                }//img
+                
+            }//p
+        } //.hgroup
+    }//fullheight
+}//header
